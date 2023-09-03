@@ -99,3 +99,5 @@ function zerar() {
   iniciarOuPausarBt.textContent = "Start";
   intervaloId = null;
 }
+
+// translate everything to english

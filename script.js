@@ -100,4 +100,3 @@ function zerar() {
   intervaloId = null;
 }
 
-// translate everything to english

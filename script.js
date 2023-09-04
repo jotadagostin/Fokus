@@ -112,11 +112,11 @@ function zerar() {
 
 function mostrarTempo() {
   const tempo = new Date(tempoDecorridoEmSegundos * 1000);
-  const tempoFormato = tempo.toLocaleTimeString("pt-br", {
+  const tempoFormatado = tempo.toLocaleTimeString("pt-br", {
     minute: "2-digit",
     second: "2-digit",
   });
-  tempoNatela.innerHTML = `${tempoFormato}`;
+  tempoNatela.innerHTML = `${tempoFormatado}`;
 }
 
 mostrarTempo();

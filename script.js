@@ -8,6 +8,7 @@ const botoes = document.querySelectorAll(".app__card-button");
 const musicaFocoInput = document.querySelector("#alternar-musica");
 const startPauseBt = document.querySelector("#start-pause");
 const iniciarOuPausarBt = document.querySelector("#start-pause span");
+const iniciarOuPausarBtIcone = document.querySelector(".app__card-primary-butto-icon")
 const musica = new Audio("/sons/luna-rise-part-one.mp3");
 const audioPlay = new Audio("/sons/play.wav");
 const audioPause = new Audio("/sons/pause.mp3");
@@ -92,11 +93,15 @@ function iniciarOuPausar() {
   audioPlay.play();
   intervaloId = setInterval(contagemRegressiva, 1000);
   iniciarOuPausarBt.textContent = "Pause";
+  iniciarOuPausarBtIcone.setAttribute('src', `/imagens/pause.png`)
+  
 }
 
 function zerar() {
   clearInterval(intervaloId);
   iniciarOuPausarBt.textContent = "Start";
   intervaloId = null;
+  iniciarOuPausarBtIcone.setAttribute('src', `/imagens/play_arrow.png`)
+
 }
 

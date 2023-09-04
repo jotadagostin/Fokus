@@ -31,21 +31,25 @@ musicaFocoInput.addEventListener("change", () => {
 });
 
 focoBt.addEventListener("click", () => {
+  tempoDecorridoEmSegundos = 1500;
   AlterarContexto("foco");
   focoBt.classList.add("active");
 });
 
 curtoBt.addEventListener("click", () => {
+  tempoDecorridoEmSegundos = 300;
   AlterarContexto("descanso-curto");
   curtoBt.classList.add("active");
 });
 
 longoBt.addEventListener("click", () => {
+  tempoDecorridoEmSegundos = 900;
   AlterarContexto("descanso-longo");
   longoBt.classList.add("active");
 });
 
 function AlterarContexto(contexto) {
+  mostrarTempo();
   botoes.forEach(function (contexto) {
     contexto.classList.remove("active");
   });
@@ -76,7 +80,7 @@ function AlterarContexto(contexto) {
 const contagemRegressiva = () => {
   zerar();
   if (tempoDecorridoEmSegundos <= 0) {
-    // audiotempoFinalizado.play();
+    audiotempoFinalizado.play();
     alert("Time is over!");
     zerar();
     return;
@@ -107,8 +111,12 @@ function zerar() {
 }
 
 function mostrarTempo() {
-  const tempo = tempoDecorridoEmSegundos;
-  tempoNatela.innerHTML = `${tempo}`;
+  const tempo = new Date(tempoDecorridoEmSegundos * 1000);
+  const tempoFormato = tempo.toLocaleTimeString("pt-br", {
+    minute: "2-digit",
+    second: "2-digit",
+  });
+  tempoNatela.innerHTML = `${tempoFormato}`;
 }
 
 mostrarTempo();

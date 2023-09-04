@@ -59,7 +59,7 @@ function AlterarContexto(contexto) {
   switch (contexto) {
     case "foco":
       titulo.innerHTML = `
-      O ptimize your productivity, <br>
+      Optimize your productivity, <br>
       <strong class="app_title-strong"> dive in that matters! </strong>
       `;
       break;
